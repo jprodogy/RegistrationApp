@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Curriculum{
@@ -10,15 +9,24 @@ public class Curriculum{
     private ArrayList<String> credits;
     static String fn = "curriculum.dat";
 
-//read and store data in a curriculum
-    public Curriculum() throws FileNotFoundException {
+    public Curriculum(){
+        
+    }
+
+    //read and store data in a curriculum
+    public void CurriculumFile() throws FileNotFoundException {
         Scanner curriculumScan = new Scanner(new File(fn));
         while(curriculumScan.hasNextLine()) {
             String info = curriculumScan.next();
-
+            if (info == "*"){
+                System.out.println("d");
+            }else {
+                int num = curriculumScan.nextInt();
+                int num2 = curriculumScan.nextInt();
+                System.out.println(info + num + num2);
+            }
 
         }
-
     }
 
     @Override

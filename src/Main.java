@@ -6,7 +6,7 @@ public class Main {
         System.out.println("\n\nHello, RegistrationApp!\n");
 
         Curriculum curri = new Curriculum();
-        System.out.println(curri.toString());
+        curri.CurriculumFile();
     }
 
 
