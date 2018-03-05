@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Curriculum{
@@ -13,11 +14,9 @@ public class Curriculum{
     public Curriculum() throws FileNotFoundException {
         Scanner curriculumScan = new Scanner(new File(fn));
         while(curriculumScan.hasNextLine()) {
-            String info = curriculumScan.nextLine();
-            String[] data = info.split(" ");
-            classType.add(data[0]);
-            classId.add(data[1]);
-            credits.add(data[2]);
+            String info = curriculumScan.next();
+
+
         }
 
     }
@@ -30,6 +29,8 @@ public class Curriculum{
                 ", credits=" + credits +
                 '}';
     }
+
+
 
 
 }
