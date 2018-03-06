@@ -26,11 +26,27 @@ public class Curriculum{
         }
     }
 
-    public void curriulumEdit(){
+    public void CurriulumEdit(){
 
     }
 
-    
+    public int CourseCount(){
+        int count = 0;
+        for (StringBuilder classes: curMap.keySet()){
+            count++;
+        }
+        return count;
+    }
+
+    public boolean CourseExist(Object o){
+        if (curMap.containsValue(o)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
 
 
 }
