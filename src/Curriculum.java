@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -21,13 +22,14 @@ public class Curriculum{
             for (int i = 0; i < sArray.length - 1; i++) {
                 str.append(sArray[i]);
             }
-            System.out.println(str);
             curMap.put(str, classCre);
         }
     }
 
-    public void CurriulumEdit(){
-
+    public void CurriulumEdit() throws FileNotFoundException {
+        PrintWriter pw = new PrintWriter("curriculum.dat");
+        
+        pw.close();
     }
 
     public int CourseCount(){
