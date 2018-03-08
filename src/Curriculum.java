@@ -1,18 +1,14 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Curriculum{
-    private Map<String, Integer> curMap;
-    private Map<String, Integer> catMap;
+    private ArrayList<Course> curriculum;
     static String fn = "curriculum.dat";
 
     public Curriculum(){
-        curMap = new HashMap<String, Integer>();
-        catMap = new HashMap<String, Integer>();
+        curriculum = new ArrayList<>();
     }
 
     //read and store data in a curriculum
@@ -26,31 +22,37 @@ public class Curriculum{
             for (int i = 0; i < sArray.length - 1; i++) {
                 str.append(sArray[i]);
             }
-            if (str.substring(0, 1).equals("*")){
-                catMap.put(str.toString(), classCre);
-            }else {
-                curMap.put(str.toString(), classCre);
-            }
+
+            curriculum.add(new Course(str.toString(), classCre));
         }
-        System.out.println(catMap);
+        System.out.println(curriculum);
     }
 
     public void CurriulumEdit() throws FileNotFoundException {
+        Scanner keyb = new Scanner(System.in);
         PrintWriter pw = new PrintWriter("curriculum.dat");
-        
+
         pw.close();
     }
 
-    public int CourseCount(){
+    public int DeptCourseCount(){
         int count = 0;
-        for (String classes: curMap.keySet()){
+        for (Course classes: curriculum){
             count++;
         }
         return count;
     }
 
-    public boolean CourseExist(Object o){
-        if (curMap.containsValue(o)){
+    public int CurriculumHours(){
+        int hours = 0;
+        for (Course co: curriculum){
+            hours += co.getCredit();
+        }
+        return hours;
+    }
+
+    public boolean CourseExist(String course){
+        if (curriculum.contains(course)){
             return true;
         }else {
             return false;

@@ -7,6 +7,8 @@ public class Main {
 
         Curriculum curri = new Curriculum();
         curri.CurriculumFile();
+        curri.CurriculumHours();
+
     }
 
 
