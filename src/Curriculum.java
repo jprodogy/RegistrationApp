@@ -11,6 +11,8 @@ public class Curriculum{
         curriculum = new ArrayList<>();
     }
 
+
+
     //read and store data in a curriculum
     public void CurriculumFile() throws FileNotFoundException {
         Scanner curriculumScan = new Scanner(new File(fn));
@@ -25,7 +27,11 @@ public class Curriculum{
 
             curriculum.add(new Course(str.toString(), classCre));
         }
-        System.out.println(curriculum);
+    }
+
+    public ArrayList<Course> getCurriculum() throws FileNotFoundException {
+        CurriculumFile();
+        return curriculum;
     }
 
     public void CurriulumEdit() throws FileNotFoundException {
