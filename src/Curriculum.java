@@ -38,6 +38,8 @@ public class Curriculum{
         Scanner keyb = new Scanner(System.in);
         PrintWriter pw = new PrintWriter("curriculum.dat");
 
+        String edit = keyb.next();
+        pw.println(edit);
         pw.close();
     }
 
